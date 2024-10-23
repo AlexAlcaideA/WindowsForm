@@ -1,6 +1,6 @@
 ﻿namespace WindowsForm
 {
-    partial class Form1
+    partial class NewTaskForm
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -326,7 +326,7 @@
             this.butCancel.UseVisualStyleBackColor = true;
             this.butCancel.Click += new System.EventHandler(this.butCancel_Click);
             // 
-            // Form1
+            // NewTaskForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -357,8 +357,8 @@
             this.Controls.Add(this.txtTitle);
             this.Controls.Add(this.butSubmit);
             this.Controls.Add(this.lblTitle);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "NewTaskForm";
+            this.Text = "Create new task";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
