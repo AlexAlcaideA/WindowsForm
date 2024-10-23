@@ -21,7 +21,7 @@ namespace WindowsForm
         {
             NewTaskForm newForm = new NewTaskForm();
 
-            newForm.Show();
+            newForm.ShowDialog();
         }
 
         private void butCancel_Click(object sender, EventArgs e)

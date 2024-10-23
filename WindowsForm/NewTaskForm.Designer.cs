@@ -120,7 +120,6 @@
             this.chbProd.TabIndex = 7;
             this.chbProd.Text = "Prod";
             this.chbProd.UseVisualStyleBackColor = true;
-            this.chbProd.CheckedChanged += new System.EventHandler(this.chbProd_CheckedChanged);
             // 
             // chbDemo
             // 
@@ -131,7 +130,6 @@
             this.chbDemo.TabIndex = 8;
             this.chbDemo.Text = "Demo";
             this.chbDemo.UseVisualStyleBackColor = true;
-            this.chbDemo.CheckedChanged += new System.EventHandler(this.chbDemo_CheckedChanged);
             // 
             // chbPreProd
             // 
@@ -142,7 +140,6 @@
             this.chbPreProd.TabIndex = 9;
             this.chbPreProd.Text = "PreProd";
             this.chbPreProd.UseVisualStyleBackColor = true;
-            this.chbPreProd.CheckedChanged += new System.EventHandler(this.chbPreProd_CheckedChanged);
             // 
             // lblEnvironmento
             // 
@@ -241,6 +238,7 @@
             this.dtpStartDate.TabIndex = 18;
             this.dtpStartDate.Value = new System.DateTime(2024, 10, 23, 0, 0, 0, 0);
             this.dtpStartDate.ValueChanged += new System.EventHandler(this.dtpStartDate_ValueChanged);
+            this.dtpStartDate.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dtpStartDate_KeyDown);
             // 
             // numericUpDown1
             // 
@@ -359,7 +357,6 @@
             this.Controls.Add(this.lblTitle);
             this.Name = "NewTaskForm";
             this.Text = "Create new task";
-            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

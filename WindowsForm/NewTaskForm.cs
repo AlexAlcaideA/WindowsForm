@@ -20,11 +20,6 @@ namespace WindowsForm
             dtpStartDate.CustomFormat = " ";
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void dtpStartDate_ValueChanged(object sender, EventArgs e)
         {
             dtpStartDate.Format = DateTimePickerFormat.Short;
@@ -47,30 +42,12 @@ namespace WindowsForm
             Close();
         }
 
-        private void chbDemo_CheckedChanged(object sender, EventArgs e)
+        private void dtpStartDate_KeyDown(object sender, KeyEventArgs e)
         {
-            if(chbDemo.Checked)
+            if (e.KeyCode == Keys.Delete)
             {
-                chbProd.Checked = false;
-                chbPreProd.Checked = false;
-            }
-        }
-
-        private void chbPreProd_CheckedChanged(object sender, EventArgs e)
-        {
-            if (chbPreProd.Checked)
-            {
-                chbProd.Checked = false;
-                chbDemo.Checked = false;
-            }
-        }
-
-        private void chbProd_CheckedChanged(object sender, EventArgs e)
-        {
-            if (chbProd.Checked)
-            {
-                chbDemo.Checked = false;
-                chbPreProd.Checked = false;
+                dtpStartDate.Format = DateTimePickerFormat.Custom;
+                dtpStartDate.CustomFormat = " ";
             }
         }
     }
