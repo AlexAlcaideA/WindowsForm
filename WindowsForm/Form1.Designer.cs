@@ -34,9 +34,9 @@
             this.lblNewTask = new System.Windows.Forms.Label();
             this.lblDescription = new System.Windows.Forms.Label();
             this.txtDescription = new System.Windows.Forms.TextBox();
-            this.cbProd = new System.Windows.Forms.CheckBox();
-            this.cbDemo = new System.Windows.Forms.CheckBox();
-            this.cbPreProd = new System.Windows.Forms.CheckBox();
+            this.chbProd = new System.Windows.Forms.CheckBox();
+            this.chbDemo = new System.Windows.Forms.CheckBox();
+            this.chbPreProd = new System.Windows.Forms.CheckBox();
             this.lblEnvironmento = new System.Windows.Forms.Label();
             this.cmbLocation = new System.Windows.Forms.ComboBox();
             this.lblLocation = new System.Windows.Forms.Label();
@@ -111,38 +111,38 @@
             this.txtDescription.Size = new System.Drawing.Size(400, 85);
             this.txtDescription.TabIndex = 6;
             // 
-            // cbProd
+            // chbProd
             // 
-            this.cbProd.AutoSize = true;
-            this.cbProd.Location = new System.Drawing.Point(315, 134);
-            this.cbProd.Name = "cbProd";
-            this.cbProd.Size = new System.Drawing.Size(58, 20);
-            this.cbProd.TabIndex = 7;
-            this.cbProd.Text = "Prod";
-            this.cbProd.UseVisualStyleBackColor = true;
-            this.cbProd.CheckedChanged += new System.EventHandler(this.cbProd_CheckedChanged);
+            this.chbProd.AutoSize = true;
+            this.chbProd.Location = new System.Drawing.Point(315, 134);
+            this.chbProd.Name = "chbProd";
+            this.chbProd.Size = new System.Drawing.Size(58, 20);
+            this.chbProd.TabIndex = 7;
+            this.chbProd.Text = "Prod";
+            this.chbProd.UseVisualStyleBackColor = true;
+            this.chbProd.CheckedChanged += new System.EventHandler(this.chbProd_CheckedChanged);
             // 
-            // cbDemo
+            // chbDemo
             // 
-            this.cbDemo.AutoSize = true;
-            this.cbDemo.Location = new System.Drawing.Point(315, 186);
-            this.cbDemo.Name = "cbDemo";
-            this.cbDemo.Size = new System.Drawing.Size(66, 20);
-            this.cbDemo.TabIndex = 8;
-            this.cbDemo.Text = "Demo";
-            this.cbDemo.UseVisualStyleBackColor = true;
-            this.cbDemo.CheckedChanged += new System.EventHandler(this.cbDemo_CheckedChanged);
+            this.chbDemo.AutoSize = true;
+            this.chbDemo.Location = new System.Drawing.Point(315, 186);
+            this.chbDemo.Name = "chbDemo";
+            this.chbDemo.Size = new System.Drawing.Size(66, 20);
+            this.chbDemo.TabIndex = 8;
+            this.chbDemo.Text = "Demo";
+            this.chbDemo.UseVisualStyleBackColor = true;
+            this.chbDemo.CheckedChanged += new System.EventHandler(this.chbDemo_CheckedChanged);
             // 
-            // cbPreProd
+            // chbPreProd
             // 
-            this.cbPreProd.AutoSize = true;
-            this.cbPreProd.Location = new System.Drawing.Point(315, 160);
-            this.cbPreProd.Name = "cbPreProd";
-            this.cbPreProd.Size = new System.Drawing.Size(79, 20);
-            this.cbPreProd.TabIndex = 9;
-            this.cbPreProd.Text = "PreProd";
-            this.cbPreProd.UseVisualStyleBackColor = true;
-            this.cbPreProd.CheckedChanged += new System.EventHandler(this.cbPreProd_CheckedChanged);
+            this.chbPreProd.AutoSize = true;
+            this.chbPreProd.Location = new System.Drawing.Point(315, 160);
+            this.chbPreProd.Name = "chbPreProd";
+            this.chbPreProd.Size = new System.Drawing.Size(79, 20);
+            this.chbPreProd.TabIndex = 9;
+            this.chbPreProd.Text = "PreProd";
+            this.chbPreProd.UseVisualStyleBackColor = true;
+            this.chbPreProd.CheckedChanged += new System.EventHandler(this.chbPreProd_CheckedChanged);
             // 
             // lblEnvironmento
             // 
@@ -155,7 +155,8 @@
             // 
             // cmbLocation
             // 
-            this.cmbLocation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbLocation.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbLocation.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbLocation.FormattingEnabled = true;
             this.cmbLocation.Items.AddRange(new object[] {
             "Spain",
@@ -347,9 +348,9 @@
             this.Controls.Add(this.lblLocation);
             this.Controls.Add(this.cmbLocation);
             this.Controls.Add(this.lblEnvironmento);
-            this.Controls.Add(this.cbPreProd);
-            this.Controls.Add(this.cbDemo);
-            this.Controls.Add(this.cbProd);
+            this.Controls.Add(this.chbPreProd);
+            this.Controls.Add(this.chbDemo);
+            this.Controls.Add(this.chbProd);
             this.Controls.Add(this.txtDescription);
             this.Controls.Add(this.lblDescription);
             this.Controls.Add(this.lblNewTask);
@@ -373,9 +374,9 @@
         private System.Windows.Forms.Label lblNewTask;
         private System.Windows.Forms.Label lblDescription;
         private System.Windows.Forms.TextBox txtDescription;
-        private System.Windows.Forms.CheckBox cbProd;
-        private System.Windows.Forms.CheckBox cbDemo;
-        private System.Windows.Forms.CheckBox cbPreProd;
+        private System.Windows.Forms.CheckBox chbProd;
+        private System.Windows.Forms.CheckBox chbDemo;
+        private System.Windows.Forms.CheckBox chbPreProd;
         private System.Windows.Forms.Label lblEnvironmento;
         private System.Windows.Forms.ComboBox cmbLocation;
         private System.Windows.Forms.Label lblLocation;

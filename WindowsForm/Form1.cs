@@ -34,7 +34,7 @@ namespace WindowsForm
         {
             if (!string.IsNullOrWhiteSpace(txtTitle.ToString()) &&
                 !string.IsNullOrWhiteSpace(txtDescription.ToString()) &&
-                (cbProd.Checked || cbPreProd.Checked || cbDemo.Checked))
+                (chbProd.Checked || chbPreProd.Checked || chbDemo.Checked))
             {
                 MessageBox.Show("Done correctly");
             }
@@ -47,30 +47,30 @@ namespace WindowsForm
             Close();
         }
 
-        private void cbProd_CheckedChanged(object sender, EventArgs e)
+        private void chbDemo_CheckedChanged(object sender, EventArgs e)
         {
-            if(cbProd.Checked)
+            if(chbDemo.Checked)
             {
-                cbPreProd.Checked = false;
-                cbDemo.Checked = false;
+                chbProd.Checked = false;
+                chbPreProd.Checked = false;
             }
         }
 
-        private void cbPreProd_CheckedChanged(object sender, EventArgs e)
+        private void chbPreProd_CheckedChanged(object sender, EventArgs e)
         {
-            if (cbPreProd.Checked)
+            if (chbPreProd.Checked)
             {
-                cbProd.Checked = false;
-                cbDemo.Checked = false;
+                chbProd.Checked = false;
+                chbDemo.Checked = false;
             }
         }
 
-        private void cbDemo_CheckedChanged(object sender, EventArgs e)
+        private void chbProd_CheckedChanged(object sender, EventArgs e)
         {
-            if (cbDemo.Checked)
+            if (chbProd.Checked)
             {
-                cbPreProd.Checked = false;
-                cbProd.Checked = false;
+                chbDemo.Checked = false;
+                chbPreProd.Checked = false;
             }
         }
     }
