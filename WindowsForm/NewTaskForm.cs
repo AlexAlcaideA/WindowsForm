@@ -44,7 +44,7 @@ namespace WindowsForm
 
         private void dtpStartDate_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Delete)
+            if (e.KeyCode == Keys.Delete || e.KeyCode == Keys.Back)
             {
                 dtpStartDate.Format = DateTimePickerFormat.Custom;
                 dtpStartDate.CustomFormat = " ";
