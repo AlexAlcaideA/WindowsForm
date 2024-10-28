@@ -138,10 +138,16 @@ namespace HospitalForms
 
         private void txtFiltroNombre_TextChanged(object sender, EventArgs e)
         {
-            foreach(Medico med in Program.ObtenerMedicos())
-            {
-                med.Nombre.Contains(txtAnyNombre.Text);
-            }
+            // Obtener el texto de búsqueda
+            string textoBusqueda = txtFiltroNombre.Text.ToLower();
+
+            // Filtrar los elementos según el texto de búsqueda
+            var elementosFiltrados = Program.ObtenerMedicos().Where(elemento => elemento.Nombre.ToLower().Contains(textoBusqueda))
+                .ToArray();
+
+            // Limpiar y actualizar el ListBox con los elementos filtrados
+            lstbMedicos.Items.Clear();
+            lstbMedicos.Items.AddRange(elementosFiltrados);
         }
     }
 }

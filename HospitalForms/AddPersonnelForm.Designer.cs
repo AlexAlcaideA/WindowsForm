@@ -43,7 +43,7 @@
             this.dtpFechaContrato = new System.Windows.Forms.DateTimePicker();
             this.cmbAnyDatosLista = new System.Windows.Forms.ComboBox();
             this.lbListaMedicos = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.lstbMedicos = new System.Windows.Forms.ListBox();
             this.lbFiltroNombre = new System.Windows.Forms.Label();
             this.txtFiltroNombre = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
@@ -51,25 +51,28 @@
             // lbAnyNombre
             // 
             this.lbAnyNombre.AutoSize = true;
-            this.lbAnyNombre.Location = new System.Drawing.Point(12, 42);
+            this.lbAnyNombre.Location = new System.Drawing.Point(9, 34);
+            this.lbAnyNombre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbAnyNombre.Name = "lbAnyNombre";
-            this.lbAnyNombre.Size = new System.Drawing.Size(59, 16);
+            this.lbAnyNombre.Size = new System.Drawing.Size(47, 13);
             this.lbAnyNombre.TabIndex = 0;
             this.lbAnyNombre.Text = "Nombre:";
             // 
             // txtAnyNombre
             // 
-            this.txtAnyNombre.Location = new System.Drawing.Point(77, 39);
+            this.txtAnyNombre.Location = new System.Drawing.Point(58, 32);
+            this.txtAnyNombre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtAnyNombre.Name = "txtAnyNombre";
-            this.txtAnyNombre.Size = new System.Drawing.Size(178, 22);
+            this.txtAnyNombre.Size = new System.Drawing.Size(134, 20);
             this.txtAnyNombre.TabIndex = 1;
             // 
             // lbTipoPeronal
             // 
             this.lbTipoPeronal.AutoSize = true;
-            this.lbTipoPeronal.Location = new System.Drawing.Point(12, 86);
+            this.lbTipoPeronal.Location = new System.Drawing.Point(9, 70);
+            this.lbTipoPeronal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbTipoPeronal.Name = "lbTipoPeronal";
-            this.lbTipoPeronal.Size = new System.Drawing.Size(38, 16);
+            this.lbTipoPeronal.Size = new System.Drawing.Size(31, 13);
             this.lbTipoPeronal.TabIndex = 2;
             this.lbTipoPeronal.Text = "Tipo:";
             // 
@@ -85,17 +88,19 @@
             "Doctor",
             "Paciente",
             "Personal Administrativo"});
-            this.cmbAnyTipo.Location = new System.Drawing.Point(142, 83);
+            this.cmbAnyTipo.Location = new System.Drawing.Point(106, 67);
+            this.cmbAnyTipo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbAnyTipo.Name = "cmbAnyTipo";
-            this.cmbAnyTipo.Size = new System.Drawing.Size(113, 24);
+            this.cmbAnyTipo.Size = new System.Drawing.Size(86, 21);
             this.cmbAnyTipo.TabIndex = 3;
             this.cmbAnyTipo.SelectedIndexChanged += new System.EventHandler(this.cmbAnyTipo_SelectedIndexChanged);
             // 
             // butAnyAlta
             // 
-            this.butAnyAlta.Location = new System.Drawing.Point(104, 415);
+            this.butAnyAlta.Location = new System.Drawing.Point(78, 337);
+            this.butAnyAlta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.butAnyAlta.Name = "butAnyAlta";
-            this.butAnyAlta.Size = new System.Drawing.Size(91, 23);
+            this.butAnyAlta.Size = new System.Drawing.Size(68, 19);
             this.butAnyAlta.TabIndex = 4;
             this.butAnyAlta.Text = "Dar de alta";
             this.butAnyAlta.UseVisualStyleBackColor = true;
@@ -104,53 +109,59 @@
             // lbAnyDatos1
             // 
             this.lbAnyDatos1.AutoSize = true;
-            this.lbAnyDatos1.Location = new System.Drawing.Point(12, 140);
+            this.lbAnyDatos1.Location = new System.Drawing.Point(9, 114);
+            this.lbAnyDatos1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbAnyDatos1.Name = "lbAnyDatos1";
-            this.lbAnyDatos1.Size = new System.Drawing.Size(44, 16);
+            this.lbAnyDatos1.Size = new System.Drawing.Size(35, 13);
             this.lbAnyDatos1.TabIndex = 5;
             this.lbAnyDatos1.Text = "label1";
             this.lbAnyDatos1.Visible = false;
             // 
             // txtAnyDatos1
             // 
-            this.txtAnyDatos1.Location = new System.Drawing.Point(142, 137);
+            this.txtAnyDatos1.Location = new System.Drawing.Point(106, 111);
+            this.txtAnyDatos1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtAnyDatos1.Name = "txtAnyDatos1";
-            this.txtAnyDatos1.Size = new System.Drawing.Size(113, 22);
+            this.txtAnyDatos1.Size = new System.Drawing.Size(86, 20);
             this.txtAnyDatos1.TabIndex = 6;
             this.txtAnyDatos1.Visible = false;
             // 
             // txtAnyDatos2
             // 
-            this.txtAnyDatos2.Location = new System.Drawing.Point(142, 186);
+            this.txtAnyDatos2.Location = new System.Drawing.Point(106, 151);
+            this.txtAnyDatos2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtAnyDatos2.Name = "txtAnyDatos2";
-            this.txtAnyDatos2.Size = new System.Drawing.Size(113, 22);
+            this.txtAnyDatos2.Size = new System.Drawing.Size(86, 20);
             this.txtAnyDatos2.TabIndex = 8;
             this.txtAnyDatos2.Visible = false;
             // 
             // lbAnyDatos2
             // 
             this.lbAnyDatos2.AutoSize = true;
-            this.lbAnyDatos2.Location = new System.Drawing.Point(12, 189);
+            this.lbAnyDatos2.Location = new System.Drawing.Point(9, 154);
+            this.lbAnyDatos2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbAnyDatos2.Name = "lbAnyDatos2";
-            this.lbAnyDatos2.Size = new System.Drawing.Size(44, 16);
+            this.lbAnyDatos2.Size = new System.Drawing.Size(35, 13);
             this.lbAnyDatos2.TabIndex = 7;
             this.lbAnyDatos2.Text = "label1";
             this.lbAnyDatos2.Visible = false;
             // 
             // txtAnyDatos3
             // 
-            this.txtAnyDatos3.Location = new System.Drawing.Point(142, 236);
+            this.txtAnyDatos3.Location = new System.Drawing.Point(106, 192);
+            this.txtAnyDatos3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtAnyDatos3.Name = "txtAnyDatos3";
-            this.txtAnyDatos3.Size = new System.Drawing.Size(113, 22);
+            this.txtAnyDatos3.Size = new System.Drawing.Size(86, 20);
             this.txtAnyDatos3.TabIndex = 10;
             this.txtAnyDatos3.Visible = false;
             // 
             // lbAnyDatos3
             // 
             this.lbAnyDatos3.AutoSize = true;
-            this.lbAnyDatos3.Location = new System.Drawing.Point(12, 239);
+            this.lbAnyDatos3.Location = new System.Drawing.Point(9, 194);
+            this.lbAnyDatos3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbAnyDatos3.Name = "lbAnyDatos3";
-            this.lbAnyDatos3.Size = new System.Drawing.Size(44, 16);
+            this.lbAnyDatos3.Size = new System.Drawing.Size(35, 13);
             this.lbAnyDatos3.TabIndex = 9;
             this.lbAnyDatos3.Text = "label1";
             this.lbAnyDatos3.Visible = false;
@@ -158,9 +169,10 @@
             // lbAnyFechaContrato
             // 
             this.lbAnyFechaContrato.AutoSize = true;
-            this.lbAnyFechaContrato.Location = new System.Drawing.Point(12, 312);
+            this.lbAnyFechaContrato.Location = new System.Drawing.Point(9, 254);
+            this.lbAnyFechaContrato.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbAnyFechaContrato.Name = "lbAnyFechaContrato";
-            this.lbAnyFechaContrato.Size = new System.Drawing.Size(99, 16);
+            this.lbAnyFechaContrato.Size = new System.Drawing.Size(82, 13);
             this.lbAnyFechaContrato.TabIndex = 11;
             this.lbAnyFechaContrato.Text = "Fecha contrato:";
             this.lbAnyFechaContrato.Visible = false;
@@ -168,9 +180,10 @@
             // dtpFechaContrato
             // 
             this.dtpFechaContrato.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaContrato.Location = new System.Drawing.Point(142, 307);
+            this.dtpFechaContrato.Location = new System.Drawing.Point(106, 249);
+            this.dtpFechaContrato.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dtpFechaContrato.Name = "dtpFechaContrato";
-            this.dtpFechaContrato.Size = new System.Drawing.Size(113, 22);
+            this.dtpFechaContrato.Size = new System.Drawing.Size(86, 20);
             this.dtpFechaContrato.TabIndex = 12;
             this.dtpFechaContrato.Visible = false;
             // 
@@ -184,55 +197,59 @@
             "Endocrinologia",
             "Famacologia",
             "Geriatria"});
-            this.cmbAnyDatosLista.Location = new System.Drawing.Point(142, 140);
+            this.cmbAnyDatosLista.Location = new System.Drawing.Point(106, 110);
+            this.cmbAnyDatosLista.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbAnyDatosLista.Name = "cmbAnyDatosLista";
-            this.cmbAnyDatosLista.Size = new System.Drawing.Size(113, 24);
+            this.cmbAnyDatosLista.Size = new System.Drawing.Size(86, 21);
             this.cmbAnyDatosLista.TabIndex = 13;
             this.cmbAnyDatosLista.Visible = false;
             // 
             // lbListaMedicos
             // 
             this.lbListaMedicos.AutoSize = true;
-            this.lbListaMedicos.Location = new System.Drawing.Point(324, 42);
+            this.lbListaMedicos.Location = new System.Drawing.Point(243, 34);
+            this.lbListaMedicos.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbListaMedicos.Name = "lbListaMedicos";
-            this.lbListaMedicos.Size = new System.Drawing.Size(62, 16);
+            this.lbListaMedicos.Size = new System.Drawing.Size(50, 13);
             this.lbListaMedicos.TabIndex = 14;
             this.lbListaMedicos.Text = "Medicos:";
             // 
-            // listBox1
+            // lstbMedicos
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 16;
-            this.listBox1.Location = new System.Drawing.Point(327, 83);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(160, 244);
-            this.listBox1.TabIndex = 15;
+            this.lstbMedicos.FormattingEnabled = true;
+            this.lstbMedicos.Location = new System.Drawing.Point(245, 67);
+            this.lstbMedicos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lstbMedicos.Name = "lstbMedicos";
+            this.lstbMedicos.Size = new System.Drawing.Size(121, 199);
+            this.lstbMedicos.TabIndex = 15;
             // 
             // lbFiltroNombre
             // 
             this.lbFiltroNombre.AutoSize = true;
-            this.lbFiltroNombre.Location = new System.Drawing.Point(443, 42);
+            this.lbFiltroNombre.Location = new System.Drawing.Point(332, 34);
+            this.lbFiltroNombre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbFiltroNombre.Name = "lbFiltroNombre";
-            this.lbFiltroNombre.Size = new System.Drawing.Size(59, 16);
+            this.lbFiltroNombre.Size = new System.Drawing.Size(47, 13);
             this.lbFiltroNombre.TabIndex = 16;
             this.lbFiltroNombre.Text = "Nombre:";
             // 
             // txtFiltroNombre
             // 
-            this.txtFiltroNombre.Location = new System.Drawing.Point(508, 39);
+            this.txtFiltroNombre.Location = new System.Drawing.Point(381, 32);
+            this.txtFiltroNombre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtFiltroNombre.Name = "txtFiltroNombre";
-            this.txtFiltroNombre.Size = new System.Drawing.Size(100, 22);
+            this.txtFiltroNombre.Size = new System.Drawing.Size(76, 20);
             this.txtFiltroNombre.TabIndex = 17;
             this.txtFiltroNombre.TextChanged += new System.EventHandler(this.txtFiltroNombre_TextChanged);
             // 
             // AddPersonnelForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(630, 450);
+            this.ClientSize = new System.Drawing.Size(472, 366);
             this.Controls.Add(this.txtFiltroNombre);
             this.Controls.Add(this.lbFiltroNombre);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.lstbMedicos);
             this.Controls.Add(this.lbListaMedicos);
             this.Controls.Add(this.cmbAnyDatosLista);
             this.Controls.Add(this.dtpFechaContrato);
@@ -248,6 +265,7 @@
             this.Controls.Add(this.lbTipoPeronal);
             this.Controls.Add(this.txtAnyNombre);
             this.Controls.Add(this.lbAnyNombre);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "AddPersonnelForm";
             this.Text = "AddPersonnelForm";
             this.ResumeLayout(false);
@@ -272,7 +290,7 @@
         private System.Windows.Forms.DateTimePicker dtpFechaContrato;
         private System.Windows.Forms.ComboBox cmbAnyDatosLista;
         private System.Windows.Forms.Label lbListaMedicos;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox lstbMedicos;
         private System.Windows.Forms.Label lbFiltroNombre;
         private System.Windows.Forms.TextBox txtFiltroNombre;
     }

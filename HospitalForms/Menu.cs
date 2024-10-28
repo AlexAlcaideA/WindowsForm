@@ -125,7 +125,7 @@ Que opcion desea escoger:
                     ModificarDiagnosticoAPaciente();
                     break;
                 case eOpcionMenu.ListarMedicos:
-                    hospital.ListarMedicos();
+                    //hospital.ListarMedicos();
                     break;
                 case eOpcionMenu.ListaPacientesDeMedico:
                     ListarPacientesMedico();
@@ -182,7 +182,7 @@ Que opcion desea escoger:
             ushort? edad = ObtenerAños("Edad del paciente:");
 
             Console.WriteLine("Personal medico:");
-            hospital.ListarMedicos();
+            //hospital.ListarMedicos();
 
             string nombreDoc = ObtenerTexto("Escribe el nombre del medico:").ToLower();
             Medico medicoTemp = hospital.EncontrarPerosnaPorNombre<Medico>(nombreDoc);
@@ -220,7 +220,7 @@ Que opcion desea escoger:
             DateTime? fecha = ObtenerFecha("Inserte la fecha y hora, formato: dd/mm/yyyy hh:mm");
 
             Console.WriteLine("Lista de medicos:");
-            hospital.ListarMedicos();
+            //hospital.ListarMedicos();
             string nombreMedico = ObtenerTexto("Escribe el nombre del medico:");
 
             Medico med = hospital.EncontrarPerosnaPorNombre<Medico>(nombreMedico);
@@ -240,7 +240,7 @@ Que opcion desea escoger:
             DateTime? fecha = ObtenerFecha("Inserte la fecha y hora, formato: dd/mm/yyyy");
 
             Console.WriteLine("Lista de medicos:");
-            hospital.ListarMedicos();
+            //hospital.ListarMedicos();
             string nombreMedico = ObtenerTexto("Escribe el nombre del medico:");
 
             Medico med = hospital.EncontrarPerosnaPorNombre<Medico>(nombreMedico);
@@ -264,7 +264,7 @@ Que opcion desea escoger:
             DateTime? fecha = ObtenerFecha("Inserte la fecha y hora, formato: dd/mm/yyyy");
 
             Console.WriteLine("Lista de medicos:");
-            hospital.ListarMedicos();
+            //hospital.ListarMedicos();
             string nombreMedico = ObtenerTexto("Escribe el nombre del medico:");
 
             Medico med = hospital.EncontrarPerosnaPorNombre<Medico>(nombreMedico);
@@ -284,7 +284,7 @@ Que opcion desea escoger:
         public void ModificarDatosMedico()
         {
             Console.WriteLine("Lista medicos:");
-            hospital.ListarMedicos();
+            //hospital.ListarMedicos();
             string nombreMedico = ObtenerTexto("Nombre del medico a modificar:");
 
             Medico med = hospital.EncontrarPerosnaPorNombre<Medico>(nombreMedico);
@@ -320,7 +320,7 @@ Que opcion desea escoger:
                 string nombre = ObtenerTexto("Nombre del paciente:");
 
                 Console.WriteLine("Lista de medicos:");
-                hospital.ListarMedicos();
+                //hospital.ListarMedicos();
 
                 string nombreMedico = ObtenerTexto("Nombre del medico al que asignar");
                 Medico med = hospital.EncontrarPerosnaPorNombre<Medico>(nombreMedico);
@@ -384,7 +384,7 @@ Datos de la cita:
             fecha = ObtenerFecha("Escribe la nueva fecha, de formato dd/mm/yyyy hh:mm");
 
             Console.WriteLine("Lista medicos:");
-            hospital.ListarMedicos();
+            //hospital.ListarMedicos();
             string nombreMedico = ObtenerTexto("Escribe el nombre del nuevo medico:");
 
             Console.WriteLine("Lista pacientes:");
@@ -427,7 +427,7 @@ Tratamiento:
 {trat.ToString()}");
 
             Console.WriteLine("Lista medicos:");
-            hospital.ListarMedicos();
+            //hospital.ListarMedicos();
             string nombreMedico = ObtenerTexto("Nombre del nuevo medico:");
 
             Medico tempMedico = hospital.EncontrarPerosnaPorNombre<Medico>(nombreMedico);
@@ -468,7 +468,7 @@ Diagnostico:
 {diag.ToString()}");
 
             Console.WriteLine("Lista medicos:");
-            hospital.ListarMedicos();
+            //hospital.ListarMedicos();
             string nombreMedico = ObtenerTexto("Nombre del nuevo medico:");
 
             Medico tempMedico = hospital.EncontrarPerosnaPorNombre<Medico>(nombreMedico);
@@ -482,7 +482,7 @@ Diagnostico:
         private void ListarPacientesMedico()
         {
             Console.WriteLine("Lista medicos:");
-            hospital.ListarMedicos();
+            //hospital.ListarMedicos();
 
             string nombre = ObtenerTexto("Escribe el nombre del medico para ver sus pacientes:").ToLower();
 
@@ -495,7 +495,7 @@ Diagnostico:
         public void ListaDeCitasDeMedico()
         {
             Console.WriteLine("Lista de medicos:");
-            hospital.ListarMedicos();
+            //hospital.ListarMedicos();
 
             string nombreMedico = ObtenerTexto("Escribe el nombre del medico para saber sus citas:");
 
