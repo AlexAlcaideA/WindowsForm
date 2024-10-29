@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GestionHospital
 {
-    internal class Cita : HistorialMedico
+    public class Cita : HistorialMedico
     {
         private Paciente paciente;
 

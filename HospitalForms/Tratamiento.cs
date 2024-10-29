@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GestionHospital
 {
-    internal class Tratamiento : HistorialMedico
+    public class Tratamiento : HistorialMedico
     {
         private string medicina;
 

@@ -14,34 +14,16 @@ namespace HospitalForms
 {
     public partial class AddPersonnelForm : Form
     {
+        public enum TiposPersonal
+        {
+            Medico = 0,
+            Paciente = 1,
+            PersAdm = 2
+        };
         public AddPersonnelForm()
         {
             InitializeComponent();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            switch ((HospitalInterface.TiposPersonal)cmbAnyTipo.SelectedIndex)
-            {
-                case HospitalInterface.TiposPersonal.Medico:
-                    if(ComprobarDatosMedico())
-                    {
-                        Program.AnyadirPersonal(ConstruirMedico());
-                        Close();
-                    }    
-                    break;
-                case HospitalInterface.TiposPersonal.Paciente:
-                    if(ComprobarDatosPaciente())
-                    {
-                        Program.AnyadirPersonal(ConstruirPaciente());
-                        Close();
-                    }
-                    break;
-                case HospitalInterface.TiposPersonal.PersAdm:
-
-                    break;
-            }
-
+            ActualizarListaMedicos();
         }
 
         private void cmbAnyTipo_SelectedIndexChanged(object sender, EventArgs e)
@@ -60,9 +42,9 @@ namespace HospitalForms
 
             dtpFechaContrato.Visible = false;
 
-            switch ((HospitalInterface.TiposPersonal)cmbAnyTipo.SelectedIndex)
+            switch ((TiposPersonal)cmbAnyTipo.SelectedIndex)
             {
-                case HospitalInterface.TiposPersonal.Medico:
+                case TiposPersonal.Medico:
                     lbAnyDatos1.Text = "Especialidad:";
                     lbAnyDatos2.Text = "Años experiencia:";
                     cmbAnyDatosLista.Items.Clear();
@@ -78,7 +60,7 @@ namespace HospitalForms
                     txtAnyDatos2.Visible = true;
                     cmbAnyDatosLista.Visible = true;
                     break;
-                case HospitalInterface.TiposPersonal.Paciente:
+                case TiposPersonal.Paciente:
                     lbAnyDatos1.Text = "Enfermedad:";
                     lbAnyDatos2.Text = "Edad:";
                     lbAnyDatos3.Text = "Nombre doctor:";
@@ -91,7 +73,7 @@ namespace HospitalForms
                     txtAnyDatos2.Visible = true; //Edad
                     txtAnyDatos3.Visible = true; //Nombre doctor
                     break;
-                case HospitalInterface.TiposPersonal.PersAdm:
+                case TiposPersonal.PersAdm:
                     lbAnyDatos1.Text = "Puesto:";
                     cmbAnyDatosLista.Items.Clear();
 
@@ -108,22 +90,6 @@ namespace HospitalForms
             }
         }
 
-        private bool ComprobarDatosMedico()
-        {
-            return !string.IsNullOrWhiteSpace(txtAnyNombre.Text) &&
-                ushort.TryParse(txtAnyDatos2.Text, out _) && 
-                !string.IsNullOrWhiteSpace(cmbAnyDatosLista.Text);
-        }
-
-        private bool ComprobarDatosPaciente()
-        {
-            return !string.IsNullOrWhiteSpace(txtAnyNombre.Text) &&
-                !string.IsNullOrWhiteSpace(txtAnyDatos1.Text) &&
-                ushort.TryParse(txtAnyDatos2.Text, out _) &&
-                !string.IsNullOrWhiteSpace(txtAnyDatos3.Text) &&
-                Program.ContienePersona(Program.ContieneMedico(txtAnyDatos3.Text));
-        }
-
         private Medico ConstruirMedico()
         {
             return new Medico(txtAnyNombre.Text, cmbAnyDatosLista.Text,
@@ -136,6 +102,12 @@ namespace HospitalForms
                 ushort.Parse(txtAnyDatos2.Text), txtAnyDatos1.Text);
         }
 
+        private PersonalAdministrativo ConstruirPersAdministrativo()
+        {
+            return new PersonalAdministrativo(txtAnyNombre.Text,
+                dtpFechaContrato.Value, cmbAnyDatosLista.Text);
+        }
+
         private void txtFiltroNombre_TextChanged(object sender, EventArgs e)
         {
             // Obtener el texto de búsqueda
@@ -145,9 +117,70 @@ namespace HospitalForms
             var elementosFiltrados = Program.ObtenerMedicos().Where(elemento => elemento.Nombre.ToLower().Contains(textoBusqueda))
                 .ToArray();
 
-            // Limpiar y actualizar el ListBox con los elementos filtrados
+            // Limpiar y actualizar con los elementos filtrados
             lstbMedicos.Items.Clear();
             lstbMedicos.Items.AddRange(elementosFiltrados);
         }
+
+        private void ActualizarListaMedicos()
+        {
+            var elementosFiltrados = Program.ObtenerMedicos().ToArray();
+
+            // Limpiar y actualizar con los elementos filtrados
+            lstbMedicos.Items.Clear();
+            lstbMedicos.Items.AddRange(elementosFiltrados);
+        }
+
+        private void butAnyAlta_Click(object sender, EventArgs e)
+        {
+            switch ((TiposPersonal)cmbAnyTipo.SelectedIndex)
+            {
+                case TiposPersonal.Medico:
+                    if (ComprobarDatosMedico())
+                    {
+                        Program.AnyadirPersonal(ConstruirMedico());
+                        Dispose();
+                    }
+                    break;
+                case TiposPersonal.Paciente:
+                    if (ComprobarDatosPaciente())
+                    {
+                        Program.AnyadirPersonal(ConstruirPaciente());
+                        Dispose();
+                    }
+                    break;
+                case TiposPersonal.PersAdm:
+                    if(ComprobarDatosPersAdministrativo())
+                    {
+                        Program.AnyadirPersonal(ConstruirPersAdministrativo());
+                        Dispose();
+                    }
+                    break;
+            }
+        }
+
+        private bool ComprobarDatosMedico()
+        {
+            return !string.IsNullOrWhiteSpace(txtAnyNombre.Text) &&
+                ushort.TryParse(txtAnyDatos2.Text, out _) &&
+                !string.IsNullOrWhiteSpace(cmbAnyDatosLista.Text);
+        }
+
+        private bool ComprobarDatosPaciente()
+        {
+            return !string.IsNullOrWhiteSpace(txtAnyNombre.Text) &&
+                !string.IsNullOrWhiteSpace(txtAnyDatos1.Text) &&
+                ushort.TryParse(txtAnyDatos2.Text, out _) &&
+                !string.IsNullOrWhiteSpace(txtAnyDatos3.Text) &&
+                Program.ContienePersona(Program.ContieneMedico(txtAnyDatos3.Text));
+        }
+
+        private bool ComprobarDatosPersAdministrativo()
+        {
+            return !string.IsNullOrWhiteSpace(txtAnyNombre.Text) &&
+                dtpFechaContrato.Checked &&
+                !string.IsNullOrWhiteSpace(cmbAnyDatosLista.Text);
+        }
+
     }
 }

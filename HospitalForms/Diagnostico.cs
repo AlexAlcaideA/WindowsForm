@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GestionHospital
 {
-    internal class Diagnostico : HistorialMedico
+    public class Diagnostico : HistorialMedico
     {
         public Diagnostico() { }
         public Diagnostico(DateTime fecha, Medico med, string notas) : base(fecha, med, notas) { }

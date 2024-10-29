@@ -30,6 +30,11 @@ namespace GestionHospital
 
         public override string ToString()
         {
+            return $@"Personal adm. {nombre}";
+        }
+
+        public string Datos()
+        {
             return $@"{nombre} que empezo el {fechaContratacion.ToShortDateString()} y esta en el puesto de {puesto}";
         }
     }

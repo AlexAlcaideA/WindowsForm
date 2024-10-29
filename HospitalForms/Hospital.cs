@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GestionHospital
 {
-    internal class Hospital
+    public class Hospital
     {
         private List<Persona> personas;
         private List<Cita> citasMedicas;
@@ -117,9 +117,10 @@ namespace GestionHospital
             }
         }
 
-        public void ListaPacientesDeMedico(Medico m)
+        public List<Paciente> ListaPacientesDeMedico(Medico m)
         {
-            Console.WriteLine(m.ListaDePacientes());
+            //Console.WriteLine(m.ListaDePacientes());
+            return m.ListaDePacientes();
         }
 
         public List<Persona> ListaPersonasHospital()

@@ -62,8 +62,26 @@
     <Compile Include="HospitalInterface.Designer.cs">
       <DependentUpon>HospitalInterface.cs</DependentUpon>
     </Compile>
+    <Compile Include="ListaPacientesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListaPacientesForm.Designer.cs">
+      <DependentUpon>ListaPacientesForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Medico.cs" />
     <Compile Include="Menu.cs" />
+    <Compile Include="ModifyMedicForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModifyMedicForm.Designer.cs">
+      <DependentUpon>ModifyMedicForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModifyPacForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModifyPacForm.Designer.cs">
+      <DependentUpon>ModifyPacForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Paciente.cs" />
     <Compile Include="Persona.cs" />
     <Compile Include="PersonalAdministrativo.cs" />
@@ -75,6 +93,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HospitalInterface.resx">
       <DependentUpon>HospitalInterface.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListaPacientesForm.resx">
+      <DependentUpon>ListaPacientesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModifyMedicForm.resx">
+      <DependentUpon>ModifyMedicForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModifyPacForm.resx">
+      <DependentUpon>ModifyPacForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

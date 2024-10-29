@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GestionHospital
 {
-    internal class Paciente : Persona
+    public class Paciente : Persona
     {
         private Medico medico;
         private ushort edad;

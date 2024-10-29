@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GestionHospital
 {
-    internal class Medico : Persona
+    public class Medico : Persona
     {
         private List<Paciente> pacientes;
         private List<Cita> citasMedicas;
@@ -62,7 +62,7 @@ namespace GestionHospital
             return pacientes.Contains(p);
         }
 
-        public string ListaDePacientes()
+        public string ListaNombreDePacientes()
         {
             StringBuilder sb = new StringBuilder();
 
@@ -76,6 +76,11 @@ Con pacientes:");
             }
 
             return sb.ToString();
+        }
+
+        public List<Paciente> ListaDePacientes()
+        {
+            return pacientes;
         }
 
         public string ListaDeCitasMedicas()

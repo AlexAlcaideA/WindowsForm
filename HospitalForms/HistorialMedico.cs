@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GestionHospital
 {
-    abstract class HistorialMedico
+    public abstract class HistorialMedico
     {
         protected Medico medico;
         protected DateTime fecha;

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GestionHospital
 {
-    abstract class Persona
+    public abstract class Persona
     {
         protected string nombre;
         public string Nombre { get { return nombre; } }

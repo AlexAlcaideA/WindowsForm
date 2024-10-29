@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace HospitalForms
 {
-    internal static class Program
+    public static class Program
     {
         public static Hospital hospital;
 
@@ -50,5 +50,19 @@ namespace HospitalForms
             return hospital.ContienePersona(pers);
         }
 
+        public static T EncontrarPersonaPorNombre<T>(string nombre) where T : Persona
+        {
+            return hospital.EncontrarPerosnaPorNombre<T>(nombre);
+        }
+
+        public static void EliminarPaciente(Paciente p)
+        {
+            hospital.EliminarPaciente(p);
+        }
+
+        public static List<Paciente> ListaPacientesMedico(Medico med)
+        {
+            return hospital.ListaPacientesDeMedico(med);
+        }
     }
 }
