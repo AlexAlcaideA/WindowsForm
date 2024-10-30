@@ -137,6 +137,8 @@ namespace HospitalForms
         private void AddHistorialMedForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             historialMedicoForm.ActualziarHistorialMedico();
+
+            Dispose();
         }
     }
 }

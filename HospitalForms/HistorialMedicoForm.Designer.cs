@@ -32,36 +32,38 @@
             this.lbHistorialPac = new System.Windows.Forms.Label();
             this.butAnyadir = new System.Windows.Forms.Button();
             this.butMod = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbMes = new System.Windows.Forms.ComboBox();
             this.lbFiltroMes = new System.Windows.Forms.Label();
             this.lbFiltroAnyo = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtAnyo = new System.Windows.Forms.TextBox();
             this.lbNombrePac = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lstbHistorial
             // 
             this.lstbHistorial.FormattingEnabled = true;
-            this.lstbHistorial.ItemHeight = 16;
-            this.lstbHistorial.Location = new System.Drawing.Point(12, 43);
+            this.lstbHistorial.Location = new System.Drawing.Point(9, 35);
+            this.lstbHistorial.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.lstbHistorial.Name = "lstbHistorial";
-            this.lstbHistorial.Size = new System.Drawing.Size(284, 356);
+            this.lstbHistorial.Size = new System.Drawing.Size(319, 290);
             this.lstbHistorial.TabIndex = 0;
             // 
             // lbHistorialPac
             // 
             this.lbHistorialPac.AutoSize = true;
-            this.lbHistorialPac.Location = new System.Drawing.Point(12, 9);
+            this.lbHistorialPac.Location = new System.Drawing.Point(9, 7);
+            this.lbHistorialPac.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbHistorialPac.Name = "lbHistorialPac";
-            this.lbHistorialPac.Size = new System.Drawing.Size(136, 16);
+            this.lbHistorialPac.Size = new System.Drawing.Size(108, 13);
             this.lbHistorialPac.TabIndex = 1;
             this.lbHistorialPac.Text = "Historial del paciente:";
             // 
             // butAnyadir
             // 
-            this.butAnyadir.Location = new System.Drawing.Point(12, 415);
+            this.butAnyadir.Location = new System.Drawing.Point(9, 337);
+            this.butAnyadir.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.butAnyadir.Name = "butAnyadir";
-            this.butAnyadir.Size = new System.Drawing.Size(75, 23);
+            this.butAnyadir.Size = new System.Drawing.Size(56, 19);
             this.butAnyadir.TabIndex = 2;
             this.butAnyadir.Text = "Añadir";
             this.butAnyadir.UseVisualStyleBackColor = true;
@@ -69,19 +71,20 @@
             // 
             // butMod
             // 
-            this.butMod.Location = new System.Drawing.Point(221, 415);
+            this.butMod.Location = new System.Drawing.Point(272, 337);
+            this.butMod.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.butMod.Name = "butMod";
-            this.butMod.Size = new System.Drawing.Size(75, 23);
+            this.butMod.Size = new System.Drawing.Size(56, 19);
             this.butMod.TabIndex = 3;
             this.butMod.Text = "Modificar";
             this.butMod.UseVisualStyleBackColor = true;
             this.butMod.Click += new System.EventHandler(this.butMod_Click);
             // 
-            // comboBox1
+            // cmbMes
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cmbMes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbMes.FormattingEnabled = true;
+            this.cmbMes.Items.AddRange(new object[] {
             "",
             "Enero",
             "Febrero",
@@ -95,59 +98,67 @@
             "Octubre",
             "Noviembre",
             "Diciembre"});
-            this.comboBox1.Location = new System.Drawing.Point(302, 72);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
-            this.comboBox1.TabIndex = 4;
+            this.cmbMes.Location = new System.Drawing.Point(335, 62);
+            this.cmbMes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbMes.Name = "cmbMes";
+            this.cmbMes.Size = new System.Drawing.Size(76, 21);
+            this.cmbMes.TabIndex = 4;
+            this.cmbMes.SelectedIndexChanged += new System.EventHandler(this.cmbMes_SelectedIndexChanged);
             // 
             // lbFiltroMes
             // 
             this.lbFiltroMes.AutoSize = true;
-            this.lbFiltroMes.Location = new System.Drawing.Point(302, 43);
+            this.lbFiltroMes.Location = new System.Drawing.Point(332, 36);
+            this.lbFiltroMes.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbFiltroMes.Name = "lbFiltroMes";
-            this.lbFiltroMes.Size = new System.Drawing.Size(36, 16);
+            this.lbFiltroMes.Size = new System.Drawing.Size(30, 13);
             this.lbFiltroMes.TabIndex = 5;
             this.lbFiltroMes.Text = "Mes:";
             // 
             // lbFiltroAnyo
             // 
             this.lbFiltroAnyo.AutoSize = true;
-            this.lbFiltroAnyo.Location = new System.Drawing.Point(435, 43);
+            this.lbFiltroAnyo.Location = new System.Drawing.Point(333, 94);
+            this.lbFiltroAnyo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbFiltroAnyo.Name = "lbFiltroAnyo";
-            this.lbFiltroAnyo.Size = new System.Drawing.Size(34, 16);
+            this.lbFiltroAnyo.Size = new System.Drawing.Size(29, 13);
             this.lbFiltroAnyo.TabIndex = 6;
             this.lbFiltroAnyo.Text = "Año:";
             // 
-            // textBox1
+            // txtAnyo
             // 
-            this.textBox1.Location = new System.Drawing.Point(438, 72);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 22);
-            this.textBox1.TabIndex = 7;
+            this.txtAnyo.Location = new System.Drawing.Point(335, 117);
+            this.txtAnyo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtAnyo.Name = "txtAnyo";
+            this.txtAnyo.Size = new System.Drawing.Size(76, 20);
+            this.txtAnyo.TabIndex = 7;
+            this.txtAnyo.TextChanged += new System.EventHandler(this.txtAnyo_TextChanged);
             // 
             // lbNombrePac
             // 
             this.lbNombrePac.AutoSize = true;
-            this.lbNombrePac.Location = new System.Drawing.Point(154, 9);
+            this.lbNombrePac.Location = new System.Drawing.Point(116, 7);
+            this.lbNombrePac.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbNombrePac.Name = "lbNombrePac";
-            this.lbNombrePac.Size = new System.Drawing.Size(44, 16);
+            this.lbNombrePac.Size = new System.Drawing.Size(35, 13);
             this.lbNombrePac.TabIndex = 8;
             this.lbNombrePac.Text = "label1";
             // 
             // HistorialMedicoForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(562, 450);
+            this.ClientSize = new System.Drawing.Size(422, 366);
             this.Controls.Add(this.lbNombrePac);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtAnyo);
             this.Controls.Add(this.lbFiltroAnyo);
             this.Controls.Add(this.lbFiltroMes);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cmbMes);
             this.Controls.Add(this.butMod);
             this.Controls.Add(this.butAnyadir);
             this.Controls.Add(this.lbHistorialPac);
             this.Controls.Add(this.lstbHistorial);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "HistorialMedicoForm";
             this.Text = "HistorialMedicoForm";
             this.ResumeLayout(false);
@@ -161,10 +172,10 @@
         private System.Windows.Forms.Label lbHistorialPac;
         private System.Windows.Forms.Button butAnyadir;
         private System.Windows.Forms.Button butMod;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbMes;
         private System.Windows.Forms.Label lbFiltroMes;
         private System.Windows.Forms.Label lbFiltroAnyo;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtAnyo;
         private System.Windows.Forms.Label lbNombrePac;
     }
 }
