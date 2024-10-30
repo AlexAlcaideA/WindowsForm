@@ -122,18 +122,18 @@
             // 
             // txtDatos1
             // 
-            this.txtDatos1.Location = new System.Drawing.Point(73, 110);
+            this.txtDatos1.Location = new System.Drawing.Point(104, 110);
             this.txtDatos1.Multiline = true;
             this.txtDatos1.Name = "txtDatos1";
-            this.txtDatos1.Size = new System.Drawing.Size(201, 57);
+            this.txtDatos1.Size = new System.Drawing.Size(170, 57);
             this.txtDatos1.TabIndex = 8;
             // 
             // txtDatos2
             // 
-            this.txtDatos2.Location = new System.Drawing.Point(73, 190);
+            this.txtDatos2.Location = new System.Drawing.Point(104, 190);
             this.txtDatos2.Multiline = true;
             this.txtDatos2.Name = "txtDatos2";
-            this.txtDatos2.Size = new System.Drawing.Size(200, 56);
+            this.txtDatos2.Size = new System.Drawing.Size(169, 56);
             this.txtDatos2.TabIndex = 9;
             // 
             // butCancel
@@ -175,6 +175,7 @@
             this.Controls.Add(this.lbTipoHistMed);
             this.Name = "AddHistorialMedForm";
             this.Text = "AddHistorialMedForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AddHistorialMedForm_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -15,20 +15,28 @@ namespace HospitalForms
     {
         private Paciente paciente;
 
+        private HistorialMedicoForm historialMedicoForm;
+
+        public event EventHandler ActualizarListaHistorialMed;
+
         public AddHistorialMedForm()
         {
             InitializeComponent();
         }
 
-        public AddHistorialMedForm(Paciente pac) : this()
+        public AddHistorialMedForm(Paciente pac, HistorialMedicoForm historialMedicoForm) : this()
         {
             paciente = pac;
+            this.historialMedicoForm = historialMedicoForm;
 
-            lbDatos1.Enabled = false;
-            lbDatos2.Enabled = false;
+            lbDatos1.Visible = false;
+            lbDatos2.Visible = false;
 
-            txtDatos1.Enabled = false;
-            txtDatos2.Enabled = false;
+            txtDatos1.Visible = false;
+            txtDatos2.Visible = false;
+
+            cmbMedico.Items.AddRange(Program.ObtenerMedicos().
+                Select(obj => obj.Nombre).ToArray());
         }
 
         private void butCancel_Click(object sender, EventArgs e)
@@ -38,9 +46,12 @@ namespace HospitalForms
 
         private void butConfirm_Click(object sender, EventArgs e)
         {
-            if(ConfirmarDatos(cmbHistMed.SelectedItem as HistorialMedico))
+            HistorialMedicoForm.TipoHistorialMedico opcionEscogida =
+                (HistorialMedicoForm.TipoHistorialMedico)cmbHistMed.SelectedIndex + 1;
+
+            if (ConfirmarDatos(opcionEscogida))
             {
-                switch((HistorialMedicoForm.TipoHistorialMedico)cmbHistMed.SelectedIndex + 1)
+                switch(opcionEscogida)
                 {
                     case HistorialMedicoForm.TipoHistorialMedico.Tratamiento:
                         paciente.AñadirHistorialMedico(ConstruirTratamiento());
@@ -54,11 +65,11 @@ namespace HospitalForms
             }
         }
 
-        private bool ConfirmarDatos(HistorialMedico histMed)
+        private bool ConfirmarDatos(HistorialMedicoForm.TipoHistorialMedico opcion)
         {
-            switch(histMed)
+            switch(opcion)
             {
-                case Tratamiento tratamiento:
+                case HistorialMedicoForm.TipoHistorialMedico.Tratamiento:
                     return dtpFecha.Checked &&
                         !string.IsNullOrWhiteSpace(cmbMedico.Text) &&
                         Program.ContienePersona(
@@ -66,7 +77,7 @@ namespace HospitalForms
                         !string.IsNullOrWhiteSpace(txtDatos1.Text) &&
                         !string.IsNullOrWhiteSpace(txtDatos2.Text);
 
-                case Diagnostico diagnostico:
+                case HistorialMedicoForm.TipoHistorialMedico.Diagnostico:
                     return dtpFecha.Checked &&
                         !string.IsNullOrWhiteSpace(cmbMedico.Text) &&
                         Program.ContienePersona(
@@ -101,19 +112,31 @@ namespace HospitalForms
                     txtDatos2.Clear();
 
                     lbDatos1.Text = "Tratamiento:";
+                    lbDatos1.Visible = true;
 
-                    lbDatos2.Enabled = true;
                     lbDatos2.Text = "Medicina:";
+                    lbDatos2.Visible = true;
 
+                    txtDatos1.Visible = true;
+                    txtDatos2.Visible = true;
                     break;
                 case HistorialMedicoForm.TipoHistorialMedico.Diagnostico:
                     txtDatos1.Clear();
 
                     lbDatos1.Text = "Diagnostico:";
+                    lbDatos1.Visible = true;
 
-                    lbDatos2.Enabled = false;
+                    txtDatos1.Visible = true;
+
+                    lbDatos2.Visible = false;
+                    txtDatos2.Visible = false;
                     break;
             }
+        }
+
+        private void AddHistorialMedForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            historialMedicoForm.ActualziarHistorialMedico();
         }
     }
 }

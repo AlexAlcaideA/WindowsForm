@@ -82,6 +82,12 @@
     </Compile>
     <Compile Include="Medico.cs" />
     <Compile Include="Menu.cs" />
+    <Compile Include="ModHistorialMedForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModHistorialMedForm.Designer.cs">
+      <DependentUpon>ModHistorialMedForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ModifyMedicForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,6 +126,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ListaPacientesForm.resx">
       <DependentUpon>ListaPacientesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModHistorialMedForm.resx">
+      <DependentUpon>ModHistorialMedForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ModifyMedicForm.resx">
       <DependentUpon>ModifyMedicForm.cs</DependentUpon>

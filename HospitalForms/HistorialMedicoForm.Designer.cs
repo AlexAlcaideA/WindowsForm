@@ -75,6 +75,7 @@
             this.butMod.TabIndex = 3;
             this.butMod.Text = "Modificar";
             this.butMod.UseVisualStyleBackColor = true;
+            this.butMod.Click += new System.EventHandler(this.butMod_Click);
             // 
             // comboBox1
             // 

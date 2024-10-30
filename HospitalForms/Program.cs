@@ -11,7 +11,6 @@ namespace HospitalForms
     {
         public static Hospital hospital;
 
-
         /// <summary>
         /// Punto de entrada principal para la aplicación.
         /// </summary>
