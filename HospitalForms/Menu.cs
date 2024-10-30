@@ -515,7 +515,7 @@ Diagnostico:
             Paciente pac = hospital.EncontrarPerosnaPorNombre<Paciente>(nombrePaciente);
 
             if (pac != null)
-                Console.WriteLine(pac.ListaHistorialMed());
+                Console.WriteLine(pac.ListaHistorialMedTexto());
         }
 
         private void EliminarPaciente()

@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddHistorialMedForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddHistorialMedForm.Designer.cs">
+      <DependentUpon>AddHistorialMedForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddPersonnelForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -55,6 +61,12 @@
     <Compile Include="Cita.cs" />
     <Compile Include="Diagnostico.cs" />
     <Compile Include="HistorialMedico.cs" />
+    <Compile Include="HistorialMedicoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HistorialMedicoForm.Designer.cs">
+      <DependentUpon>HistorialMedicoForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Hospital.cs" />
     <Compile Include="HospitalInterface.cs">
       <SubType>Form</SubType>
@@ -82,14 +94,26 @@
     <Compile Include="ModifyPacForm.Designer.cs">
       <DependentUpon>ModifyPacForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ModifyPersAdmiForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModifyPersAdmiForm.Designer.cs">
+      <DependentUpon>ModifyPersAdmiForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Paciente.cs" />
     <Compile Include="Persona.cs" />
     <Compile Include="PersonalAdministrativo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tratamiento.cs" />
+    <EmbeddedResource Include="AddHistorialMedForm.resx">
+      <DependentUpon>AddHistorialMedForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddPersonnelForm.resx">
       <DependentUpon>AddPersonnelForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HistorialMedicoForm.resx">
+      <DependentUpon>HistorialMedicoForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HospitalInterface.resx">
       <DependentUpon>HospitalInterface.cs</DependentUpon>
@@ -102,6 +126,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ModifyPacForm.resx">
       <DependentUpon>ModifyPacForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModifyPersAdmiForm.resx">
+      <DependentUpon>ModifyPersAdmiForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

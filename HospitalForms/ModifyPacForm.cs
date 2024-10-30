@@ -18,6 +18,12 @@ namespace HospitalForms
         public ModifyPacForm()
         {
             InitializeComponent();
+        }
+
+        public ModifyPacForm(Paciente pac) : this()
+        {
+            this.pac = pac;
+
             InitializeValues();
         }
 
@@ -29,12 +35,35 @@ namespace HospitalForms
             txtModMedico.Text = pac.Medico.Nombre;
         }
 
-        public void SetPaciente(Paciente pac)
+        private void butCancel_Click(object sender, EventArgs e)
         {
-            this.pac = pac;
+            Dispose();
         }
 
-        private void butCancel_Click(object sender, EventArgs e)
+        private void butConfirm_Click(object sender, EventArgs e)
+        {
+            if(ConfirmarDatos())
+            {
+                pac.ModificarPaciente(txtModNombre.Text,
+                    Program.EncontrarPersonaPorNombre<Medico>(txtModMedico.Text),
+                    ushort.Parse(txtModEdad.Text),
+                    txtModEnfermedad.Text);
+
+                Dispose();
+            }
+        }
+
+        private bool ConfirmarDatos()
+        {
+            return !string.IsNullOrWhiteSpace(txtModNombre.Text) &&
+                ushort.TryParse(txtModEdad.Text, out _) &&
+                !string.IsNullOrWhiteSpace(txtModEnfermedad.Text) &&
+                !string.IsNullOrWhiteSpace(txtModMedico.Text) &&
+                Program.ContienePersona(
+                    Program.EncontrarPersonaPorNombre<Medico>(txtModMedico.Text));
+        }
+
+        private void ModifyPacForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             Dispose();
         }

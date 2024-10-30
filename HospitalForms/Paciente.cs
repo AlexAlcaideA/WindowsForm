@@ -102,7 +102,12 @@ namespace GestionHospital
             return sb.ToString();
         }
 
-        public string ListaHistorialMed()
+        public List<HistorialMedico> ListaHistorialMedico()
+        {
+            return historial;
+        }
+
+        public string ListaHistorialMedTexto()
         {
             StringBuilder sb = new StringBuilder();
 

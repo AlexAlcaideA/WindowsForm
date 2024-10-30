@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GestionHospital
 {
-    internal class PersonalAdministrativo : Persona
+    public class PersonalAdministrativo : Persona
     {
         private DateTime fechaContratacion;
         private string puesto;

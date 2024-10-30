@@ -98,7 +98,8 @@ namespace HospitalForms
 
         private Paciente ConstruirPaciente()
         {
-            return new Paciente(txtAnyNombre.Text, Program.ContieneMedico(txtAnyDatos3.Text),
+            return new Paciente(txtAnyNombre.Text, 
+                Program.EncontrarPersonaPorNombre<Medico>(txtAnyDatos3.Text),
                 ushort.Parse(txtAnyDatos2.Text), txtAnyDatos1.Text);
         }
 
@@ -145,7 +146,13 @@ namespace HospitalForms
                 case TiposPersonal.Paciente:
                     if (ComprobarDatosPaciente())
                     {
-                        Program.AnyadirPersonal(ConstruirPaciente());
+                        Medico tempMed = Program.EncontrarPersonaPorNombre<Medico>(txtAnyDatos3.Text);
+
+                        Paciente tempPac = ConstruirPaciente();
+
+                        Program.AnyadirPersonal(tempPac);
+                        tempMed.AñadirPaciente(tempPac);
+
                         Dispose();
                     }
                     break;
@@ -172,7 +179,8 @@ namespace HospitalForms
                 !string.IsNullOrWhiteSpace(txtAnyDatos1.Text) &&
                 ushort.TryParse(txtAnyDatos2.Text, out _) &&
                 !string.IsNullOrWhiteSpace(txtAnyDatos3.Text) &&
-                Program.ContienePersona(Program.ContieneMedico(txtAnyDatos3.Text));
+                Program.ContienePersona(
+                    Program.EncontrarPersonaPorNombre<Medico>(txtAnyDatos3.Text));
         }
 
         private bool ComprobarDatosPersAdministrativo()
@@ -182,5 +190,9 @@ namespace HospitalForms
                 !string.IsNullOrWhiteSpace(cmbAnyDatosLista.Text);
         }
 
+        private void AddPersonnelForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Dispose();
+        }
     }
 }

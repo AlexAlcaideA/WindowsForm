@@ -13,6 +13,8 @@ namespace GestionHospital
         protected string texto;
 
         public DateTime Fecha { get { return fecha; } }
+        public Medico Medico { get { return medico; } }
+        public string Texto { get { return texto; } }
 
         protected HistorialMedico() { }
         protected HistorialMedico(DateTime fecha, Medico medico)

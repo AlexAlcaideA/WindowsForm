@@ -40,11 +40,6 @@ namespace HospitalForms
             return hospital.ListaMedicos();
         }
 
-        public static Medico ContieneMedico(string nombreDoc)
-        {
-            return hospital.EncontrarPerosnaPorNombre<Medico>(nombreDoc);
-        }
-
         public static bool ContienePersona(Persona pers)
         {
             return hospital.ContienePersona(pers);

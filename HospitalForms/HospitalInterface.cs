@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 using static HospitalForms.HospitalInterface;
 
 namespace HospitalForms
@@ -108,20 +109,31 @@ namespace HospitalForms
             {
                 case TiposPersonal.Medico:
                     elementosFiltrados = Program.ObtenerPersonal().Where(elemento =>
-                    elemento.Nombre.ToLower().Contains(nombreBusqueda) &&
+                    (string.IsNullOrEmpty(nombreBusqueda) ||
+                    elemento.Nombre.ToLower().Contains(nombreBusqueda)) &&
                     elemento is Medico).ToArray();
                     break;
                 case TiposPersonal.Paciente:
                     elementosFiltrados = Program.ObtenerPersonal().Where(elemento =>
-                    elemento.Nombre.ToLower().Contains(nombreBusqueda) &&
+                    (string.IsNullOrEmpty(nombreBusqueda) || 
+                    elemento.Nombre.ToLower().Contains(nombreBusqueda)) &&
                     elemento is Paciente).ToArray();
                     break;
                 case TiposPersonal.PersAdm:
                     elementosFiltrados = Program.ObtenerPersonal().Where(elemento =>
-                    elemento.Nombre.ToLower().Contains(nombreBusqueda) &&
+                    (string.IsNullOrEmpty(nombreBusqueda) ||
+                    elemento.Nombre.ToLower().Contains(nombreBusqueda)) &&
                     elemento is PersonalAdministrativo).ToArray();
                     break;
-            }            
+                default:
+                    elementosFiltrados = Program.ObtenerPersonal().Where(elemento =>
+                    string.IsNullOrEmpty(nombreBusqueda) ||
+                    elemento.Nombre.ToLower().Contains(nombreBusqueda)).ToArray();
+                    break;
+            }         
+            
+            lstbPersonal.Items.Clear();
+            lstbPersonal.Items.AddRange(elementosFiltrados);
         }
 
         private void butModDatos_Click(object sender, EventArgs e)
@@ -129,9 +141,7 @@ namespace HospitalForms
             switch (lstbPersonal.SelectedItem)
             {
                 case Medico medico:
-                    ModifyMedicForm formMed = new ModifyMedicForm();
-
-                    formMed.SetMedico(medico);
+                    ModifyMedicForm formMed = new ModifyMedicForm(medico);
 
                     formMed.ShowDialog();
                     break;
@@ -140,15 +150,16 @@ namespace HospitalForms
 
                     if(formPac == null || formPac.IsDisposed)
                     {
-                        formPac = new ModifyPacForm();
+                        formPac = new ModifyPacForm(paciente);
 
-                        formPac.SetPaciente(paciente);
                         formPac.Show();
                     }
                     break;
 
                 case PersonalAdministrativo persAdmin:
-                    
+                    ModifyPersAdmiForm formAdmi = new ModifyPersAdmiForm(persAdmin);
+
+                    formAdmi.ShowDialog();
                     break;
             }
         }
@@ -166,12 +177,20 @@ namespace HospitalForms
 
                 if(medicoSeleccionado != null)
                 {
-                    ListaPacientesForm listPacForm = new ListaPacientesForm();
+                    ListaPacientesForm listPacForm = 
+                        new ListaPacientesForm(lstbPersonal.SelectedItem as Medico);
 
-                    listPacForm.SetMedico(lstbPersonal.SelectedItem as Medico);
                     listPacForm.Show();
                 }
             } 
+        }
+
+        private void butModHistorialMed_Click(object sender, EventArgs e)
+        {
+            HistorialMedicoForm formHistorial =
+                new HistorialMedicoForm(lstbPersonal.SelectedItem as Paciente);
+
+            formHistorial.ShowDialog();
         }
     }
 }

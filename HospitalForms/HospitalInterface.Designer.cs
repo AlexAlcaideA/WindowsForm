@@ -30,6 +30,9 @@
         {
             this.tbcPrincipal = new System.Windows.Forms.TabControl();
             this.tabPersonas = new System.Windows.Forms.TabPage();
+            this.butListPacMed = new System.Windows.Forms.Button();
+            this.butElimPaciente = new System.Windows.Forms.Button();
+            this.butModHistorialMed = new System.Windows.Forms.Button();
             this.butActualizarLista = new System.Windows.Forms.Button();
             this.butModDatos = new System.Windows.Forms.Button();
             this.butAnyadirPersonal = new System.Windows.Forms.Button();
@@ -39,9 +42,6 @@
             this.txtBuscarNombre = new System.Windows.Forms.TextBox();
             this.lbNombrePersona = new System.Windows.Forms.Label();
             this.tabCitas = new System.Windows.Forms.TabPage();
-            this.butModHistorialMed = new System.Windows.Forms.Button();
-            this.butElimPaciente = new System.Windows.Forms.Button();
-            this.butListPacMed = new System.Windows.Forms.Button();
             this.tbcPrincipal.SuspendLayout();
             this.tabPersonas.SuspendLayout();
             this.SuspendLayout();
@@ -76,6 +76,43 @@
             this.tabPersonas.TabIndex = 0;
             this.tabPersonas.Text = "Personas";
             this.tabPersonas.UseVisualStyleBackColor = true;
+            // 
+            // butListPacMed
+            // 
+            this.butListPacMed.BackColor = System.Drawing.Color.Gray;
+            this.butListPacMed.ForeColor = System.Drawing.Color.DarkGray;
+            this.butListPacMed.Location = new System.Drawing.Point(254, 229);
+            this.butListPacMed.Name = "butListPacMed";
+            this.butListPacMed.Size = new System.Drawing.Size(121, 42);
+            this.butListPacMed.TabIndex = 10;
+            this.butListPacMed.Text = "Lista pacientes medico";
+            this.butListPacMed.UseVisualStyleBackColor = false;
+            this.butListPacMed.Click += new System.EventHandler(this.butListPacMed_Click);
+            // 
+            // butElimPaciente
+            // 
+            this.butElimPaciente.BackColor = System.Drawing.Color.Gray;
+            this.butElimPaciente.ForeColor = System.Drawing.Color.DarkGray;
+            this.butElimPaciente.Location = new System.Drawing.Point(254, 169);
+            this.butElimPaciente.Name = "butElimPaciente";
+            this.butElimPaciente.Size = new System.Drawing.Size(121, 23);
+            this.butElimPaciente.TabIndex = 9;
+            this.butElimPaciente.Text = "Eliminar paciente";
+            this.butElimPaciente.UseVisualStyleBackColor = false;
+            this.butElimPaciente.Click += new System.EventHandler(this.butElimPaciente_Click);
+            // 
+            // butModHistorialMed
+            // 
+            this.butModHistorialMed.BackColor = System.Drawing.Color.Gray;
+            this.butModHistorialMed.Enabled = false;
+            this.butModHistorialMed.ForeColor = System.Drawing.Color.DarkGray;
+            this.butModHistorialMed.Location = new System.Drawing.Point(254, 123);
+            this.butModHistorialMed.Name = "butModHistorialMed";
+            this.butModHistorialMed.Size = new System.Drawing.Size(121, 40);
+            this.butModHistorialMed.TabIndex = 8;
+            this.butModHistorialMed.Text = "Historial medico paciente";
+            this.butModHistorialMed.UseVisualStyleBackColor = false;
+            this.butModHistorialMed.Click += new System.EventHandler(this.butModHistorialMed_Click);
             // 
             // butActualizarLista
             // 
@@ -172,42 +209,6 @@
             this.tabCitas.TabIndex = 1;
             this.tabCitas.Text = "Citas";
             this.tabCitas.UseVisualStyleBackColor = true;
-            // 
-            // butModHistorialMed
-            // 
-            this.butModHistorialMed.BackColor = System.Drawing.Color.Gray;
-            this.butModHistorialMed.Enabled = false;
-            this.butModHistorialMed.ForeColor = System.Drawing.Color.DarkGray;
-            this.butModHistorialMed.Location = new System.Drawing.Point(254, 123);
-            this.butModHistorialMed.Name = "butModHistorialMed";
-            this.butModHistorialMed.Size = new System.Drawing.Size(121, 40);
-            this.butModHistorialMed.TabIndex = 8;
-            this.butModHistorialMed.Text = "Mod. historial medico";
-            this.butModHistorialMed.UseVisualStyleBackColor = false;
-            // 
-            // butElimPaciente
-            // 
-            this.butElimPaciente.BackColor = System.Drawing.Color.Gray;
-            this.butElimPaciente.ForeColor = System.Drawing.Color.DarkGray;
-            this.butElimPaciente.Location = new System.Drawing.Point(254, 169);
-            this.butElimPaciente.Name = "butElimPaciente";
-            this.butElimPaciente.Size = new System.Drawing.Size(121, 23);
-            this.butElimPaciente.TabIndex = 9;
-            this.butElimPaciente.Text = "Eliminar paciente";
-            this.butElimPaciente.UseVisualStyleBackColor = false;
-            this.butElimPaciente.Click += new System.EventHandler(this.butElimPaciente_Click);
-            // 
-            // butListPacMed
-            // 
-            this.butListPacMed.BackColor = System.Drawing.Color.Gray;
-            this.butListPacMed.ForeColor = System.Drawing.Color.DarkGray;
-            this.butListPacMed.Location = new System.Drawing.Point(254, 229);
-            this.butListPacMed.Name = "butListPacMed";
-            this.butListPacMed.Size = new System.Drawing.Size(121, 42);
-            this.butListPacMed.TabIndex = 10;
-            this.butListPacMed.Text = "Lista pacientes medico";
-            this.butListPacMed.UseVisualStyleBackColor = false;
-            this.butListPacMed.Click += new System.EventHandler(this.butListPacMed_Click);
             // 
             // HospitalInterface
             // 

@@ -32,10 +32,10 @@
             this.lbModNombre = new System.Windows.Forms.Label();
             this.txtModNombre = new System.Windows.Forms.TextBox();
             this.lbModExperiencia = new System.Windows.Forms.Label();
-            this.txtModExp = new System.Windows.Forms.TextBox();
             this.lbModEspecialidad = new System.Windows.Forms.Label();
-            this.txtModEspecialidad = new System.Windows.Forms.TextBox();
             this.butConfirm = new System.Windows.Forms.Button();
+            this.txtModExp = new System.Windows.Forms.TextBox();
+            this.cmbModEspecialidad = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // butCancel
@@ -73,13 +73,6 @@
             this.lbModExperiencia.TabIndex = 3;
             this.lbModExperiencia.Text = "Años experiencia:";
             // 
-            // txtModExp
-            // 
-            this.txtModExp.Location = new System.Drawing.Point(129, 58);
-            this.txtModExp.Name = "txtModExp";
-            this.txtModExp.Size = new System.Drawing.Size(124, 22);
-            this.txtModExp.TabIndex = 4;
-            // 
             // lbModEspecialidad
             // 
             this.lbModEspecialidad.AutoSize = true;
@@ -88,13 +81,6 @@
             this.lbModEspecialidad.Size = new System.Drawing.Size(90, 16);
             this.lbModEspecialidad.TabIndex = 5;
             this.lbModEspecialidad.Text = "Especialidad:";
-            // 
-            // txtModEspecialidad
-            // 
-            this.txtModEspecialidad.Location = new System.Drawing.Point(105, 95);
-            this.txtModEspecialidad.Name = "txtModEspecialidad";
-            this.txtModEspecialidad.Size = new System.Drawing.Size(148, 22);
-            this.txtModEspecialidad.TabIndex = 6;
             // 
             // butConfirm
             // 
@@ -106,13 +92,29 @@
             this.butConfirm.UseVisualStyleBackColor = true;
             this.butConfirm.Click += new System.EventHandler(this.butConfirm_Click);
             // 
+            // txtModExp
+            // 
+            this.txtModExp.Location = new System.Drawing.Point(129, 58);
+            this.txtModExp.Name = "txtModExp";
+            this.txtModExp.Size = new System.Drawing.Size(124, 22);
+            this.txtModExp.TabIndex = 4;
+            // 
+            // cmbModEspecialidad
+            // 
+            this.cmbModEspecialidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbModEspecialidad.FormattingEnabled = true;
+            this.cmbModEspecialidad.Location = new System.Drawing.Point(105, 95);
+            this.cmbModEspecialidad.Name = "cmbModEspecialidad";
+            this.cmbModEspecialidad.Size = new System.Drawing.Size(148, 24);
+            this.cmbModEspecialidad.TabIndex = 8;
+            // 
             // ModifyMedicForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(292, 178);
+            this.Controls.Add(this.cmbModEspecialidad);
             this.Controls.Add(this.butConfirm);
-            this.Controls.Add(this.txtModEspecialidad);
             this.Controls.Add(this.lbModEspecialidad);
             this.Controls.Add(this.txtModExp);
             this.Controls.Add(this.lbModExperiencia);
@@ -121,6 +123,7 @@
             this.Controls.Add(this.butCancel);
             this.Name = "ModifyMedicForm";
             this.Text = "ModifyMedicForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ModifyMedicForm_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -132,9 +135,9 @@
         private System.Windows.Forms.Label lbModNombre;
         private System.Windows.Forms.TextBox txtModNombre;
         private System.Windows.Forms.Label lbModExperiencia;
-        private System.Windows.Forms.TextBox txtModExp;
         private System.Windows.Forms.Label lbModEspecialidad;
-        private System.Windows.Forms.TextBox txtModEspecialidad;
         private System.Windows.Forms.Button butConfirm;
+        private System.Windows.Forms.TextBox txtModExp;
+        private System.Windows.Forms.ComboBox cmbModEspecialidad;
     }
 }

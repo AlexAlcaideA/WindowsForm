@@ -263,6 +263,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "AddPersonnelForm";
             this.Text = "AddPersonnelForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AddPersonnelForm_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

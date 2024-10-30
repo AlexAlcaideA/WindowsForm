@@ -48,6 +48,7 @@
             this.Controls.Add(this.lstbPacientes);
             this.Name = "ListaPacientesForm";
             this.Text = "ListaPacientesForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ListaPacientesForm_FormClosing);
             this.ResumeLayout(false);
 
         }

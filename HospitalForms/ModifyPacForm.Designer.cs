@@ -122,6 +122,7 @@
             this.butConfirm.TabIndex = 9;
             this.butConfirm.Text = "Confirmar";
             this.butConfirm.UseVisualStyleBackColor = true;
+            this.butConfirm.Click += new System.EventHandler(this.butConfirm_Click);
             // 
             // ModifyPacForm
             // 
@@ -140,6 +141,7 @@
             this.Controls.Add(this.lbModNombre);
             this.Name = "ModifyPacForm";
             this.Text = "ModifyPacForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ModifyPacForm_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

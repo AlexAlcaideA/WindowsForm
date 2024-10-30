@@ -17,6 +17,11 @@ namespace HospitalForms
         public ListaPacientesForm()
         {
             InitializeComponent();
+        }
+
+        public ListaPacientesForm(Medico med) : this()
+        {
+            this.med = med;
             InitializeList();
         }
 
@@ -28,6 +33,11 @@ namespace HospitalForms
         public void SetMedico(Medico med)
         {
             this.med = med;
+        }
+
+        private void ListaPacientesForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Dispose();
         }
     }
 }
