@@ -115,7 +115,7 @@ namespace HospitalForms
             string textoBusqueda = txtFiltroNombre.Text.ToLower();
 
             // Filtrar los elementos según el texto de búsqueda
-            var elementosFiltrados = Program.ObtenerMedicos().Where(elemento => elemento.Nombre.ToLower().Contains(textoBusqueda))
+            var elementosFiltrados = Program.ObtenerLista<Medico>().Where(elemento => elemento.Nombre.ToLower().Contains(textoBusqueda))
                 .ToArray();
 
             // Limpiar y actualizar con los elementos filtrados
@@ -125,7 +125,7 @@ namespace HospitalForms
 
         private void ActualizarListaMedicos()
         {
-            var elementosFiltrados = Program.ObtenerMedicos().ToArray();
+            var elementosFiltrados = Program.ObtenerLista<Medico>().ToArray();
 
             // Limpiar y actualizar con los elementos filtrados
             lstbMedicos.Items.Clear();

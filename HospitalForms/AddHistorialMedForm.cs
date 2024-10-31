@@ -35,7 +35,7 @@ namespace HospitalForms
             txtDatos1.Visible = false;
             txtDatos2.Visible = false;
 
-            cmbMedico.Items.AddRange(Program.ObtenerMedicos().
+            cmbMedico.Items.AddRange(Program.ObtenerLista<Medico>().
                 Select(obj => obj.Nombre).ToArray());
         }
 

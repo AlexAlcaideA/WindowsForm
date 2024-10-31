@@ -34,9 +34,9 @@ namespace HospitalForms
             return hospital.ListaPersonasHospital();
         }
 
-        public static List<Medico> ObtenerMedicos()
+        public static List<T> ObtenerLista<T>() where T : Persona
         {
-            return hospital.ListaMedicos();
+            return hospital.Lista<T>();
         }
 
         public static bool ContienePersona(Persona pers)

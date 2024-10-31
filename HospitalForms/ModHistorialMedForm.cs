@@ -30,7 +30,7 @@ namespace HospitalForms
 
         private void InitializeValues()
         {
-            cmbMedico.Items.AddRange(Program.ObtenerMedicos().
+            cmbMedico.Items.AddRange(Program.ObtenerLista<Medico>().
                 Select(obj => obj.Nombre).ToArray());
 
             dtpFecha.Value = histMedico.Fecha;

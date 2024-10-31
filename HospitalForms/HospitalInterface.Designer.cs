@@ -42,8 +42,17 @@
             this.txtBuscarNombre = new System.Windows.Forms.TextBox();
             this.lbNombrePersona = new System.Windows.Forms.Label();
             this.tabCitas = new System.Windows.Forms.TabPage();
+            this.dgvListaCitas = new System.Windows.Forms.DataGridView();
+            this.CitaColFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CitaColMedico = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CitaColPaciente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.butAdd = new System.Windows.Forms.Button();
+            this.butMod = new System.Windows.Forms.Button();
+            this.butEliminar = new System.Windows.Forms.Button();
             this.tbcPrincipal.SuspendLayout();
             this.tabPersonas.SuspendLayout();
+            this.tabCitas.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListaCitas)).BeginInit();
             this.SuspendLayout();
             // 
             // tbcPrincipal
@@ -202,6 +211,10 @@
             // 
             // tabCitas
             // 
+            this.tabCitas.Controls.Add(this.butEliminar);
+            this.tabCitas.Controls.Add(this.butMod);
+            this.tabCitas.Controls.Add(this.butAdd);
+            this.tabCitas.Controls.Add(this.dgvListaCitas);
             this.tabCitas.Location = new System.Drawing.Point(4, 25);
             this.tabCitas.Name = "tabCitas";
             this.tabCitas.Padding = new System.Windows.Forms.Padding(3);
@@ -209,6 +222,74 @@
             this.tabCitas.TabIndex = 1;
             this.tabCitas.Text = "Citas";
             this.tabCitas.UseVisualStyleBackColor = true;
+            // 
+            // dgvListaCitas
+            // 
+            this.dgvListaCitas.AllowUserToAddRows = false;
+            this.dgvListaCitas.AllowUserToDeleteRows = false;
+            this.dgvListaCitas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvListaCitas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.CitaColFecha,
+            this.CitaColMedico,
+            this.CitaColPaciente});
+            this.dgvListaCitas.Location = new System.Drawing.Point(10, 6);
+            this.dgvListaCitas.Name = "dgvListaCitas";
+            this.dgvListaCitas.ReadOnly = true;
+            this.dgvListaCitas.RowHeadersWidth = 51;
+            this.dgvListaCitas.RowTemplate.Height = 24;
+            this.dgvListaCitas.Size = new System.Drawing.Size(449, 379);
+            this.dgvListaCitas.TabIndex = 0;
+            // 
+            // CitaColFecha
+            // 
+            this.CitaColFecha.HeaderText = "Fecha";
+            this.CitaColFecha.MinimumWidth = 6;
+            this.CitaColFecha.Name = "CitaColFecha";
+            this.CitaColFecha.ReadOnly = true;
+            this.CitaColFecha.Width = 125;
+            // 
+            // CitaColMedico
+            // 
+            this.CitaColMedico.HeaderText = "Medico";
+            this.CitaColMedico.MinimumWidth = 6;
+            this.CitaColMedico.Name = "CitaColMedico";
+            this.CitaColMedico.ReadOnly = true;
+            this.CitaColMedico.Width = 125;
+            // 
+            // CitaColPaciente
+            // 
+            this.CitaColPaciente.HeaderText = "Paciente";
+            this.CitaColPaciente.MinimumWidth = 6;
+            this.CitaColPaciente.Name = "CitaColPaciente";
+            this.CitaColPaciente.ReadOnly = true;
+            this.CitaColPaciente.Width = 125;
+            // 
+            // butAdd
+            // 
+            this.butAdd.Location = new System.Drawing.Point(10, 391);
+            this.butAdd.Name = "butAdd";
+            this.butAdd.Size = new System.Drawing.Size(75, 23);
+            this.butAdd.TabIndex = 1;
+            this.butAdd.Text = "Añadir";
+            this.butAdd.UseVisualStyleBackColor = true;
+            // 
+            // butMod
+            // 
+            this.butMod.Location = new System.Drawing.Point(188, 391);
+            this.butMod.Name = "butMod";
+            this.butMod.Size = new System.Drawing.Size(75, 23);
+            this.butMod.TabIndex = 2;
+            this.butMod.Text = "Modificar";
+            this.butMod.UseVisualStyleBackColor = true;
+            // 
+            // butEliminar
+            // 
+            this.butEliminar.Location = new System.Drawing.Point(384, 391);
+            this.butEliminar.Name = "butEliminar";
+            this.butEliminar.Size = new System.Drawing.Size(75, 23);
+            this.butEliminar.TabIndex = 3;
+            this.butEliminar.Text = "Eliminar";
+            this.butEliminar.UseVisualStyleBackColor = true;
             // 
             // HospitalInterface
             // 
@@ -221,6 +302,8 @@
             this.tbcPrincipal.ResumeLayout(false);
             this.tabPersonas.ResumeLayout(false);
             this.tabPersonas.PerformLayout();
+            this.tabCitas.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListaCitas)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -241,6 +324,13 @@
         private System.Windows.Forms.Button butModHistorialMed;
         private System.Windows.Forms.Button butListPacMed;
         private System.Windows.Forms.Button butElimPaciente;
+        private System.Windows.Forms.DataGridView dgvListaCitas;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CitaColFecha;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CitaColMedico;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CitaColPaciente;
+        private System.Windows.Forms.Button butEliminar;
+        private System.Windows.Forms.Button butMod;
+        private System.Windows.Forms.Button butAdd;
     }
 }
 

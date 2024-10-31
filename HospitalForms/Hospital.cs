@@ -11,7 +11,7 @@ namespace GestionHospital
         private List<Persona> personas;
         private List<Cita> citasMedicas;
 
-        public Hospital() 
+        public Hospital()
         {
             personas = new List<Persona>();
             citasMedicas = new List<Cita>();
@@ -48,7 +48,7 @@ namespace GestionHospital
 
         public void AñadirTratamientoPaciente(DateTime fecha, string tratamiento, string medicamento, Medico med, Paciente pac)
         {
-            pac.AñadirHistorialMedico(new Tratamiento(fecha,  med, tratamiento, medicamento));
+            pac.AñadirHistorialMedico(new Tratamiento(fecha, med, tratamiento, medicamento));
         }
 
         public void AñadirDiagnosticoPaciente(DateTime fecha, string notas, Medico med, Paciente pac)
@@ -74,6 +74,19 @@ namespace GestionHospital
             personas.Remove(p);
 
             p.EliminarseDelMedico();
+        }
+
+        public List<T> Lista<T>() where T : Persona
+        {
+            List<T> lista = new List<T>();
+
+            foreach (Persona p in personas)
+            {
+                if (p is T)
+                    lista.Add((T)p);
+            }
+
+            return lista;
         }
 
         public List<Medico> ListaMedicos()
